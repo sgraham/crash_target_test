@@ -45,6 +45,7 @@ int main() {
   if (!CloseHandle(remote_thread))
     abort();
 #elif 1
+  // http://processhacker.sourceforge.net/doc/ntpsapi_8h_source.html
 #define THREAD_CREATE_FLAGS_SKIP_THREAD_ATTACH 0x00000002
   NtCreateThreadExFunc nt_create_thread_ex =
       reinterpret_cast<NtCreateThreadExFunc>(
